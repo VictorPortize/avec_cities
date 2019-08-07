@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
-import Avec from '../avec_cities/screens/avec_router'
-import Store from './redux/reducers'
+import Avec from './screens/AvecRouter'
+import Store from './redux/Reducers/index'
 
 const store = createStore(Store)
 

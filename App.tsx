@@ -1,2 +1,2 @@
-import Avec from './avec_cities/avec_cities'
+import Avec from './avecCities/AvecCities'
 export default Avec

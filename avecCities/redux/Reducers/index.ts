@@ -1,4 +1,4 @@
-import { ActionsType } from '../actions'
+import { ActionsType } from '../Actions'
 
 interface ActionType{
     type: String
@@ -9,7 +9,7 @@ const initialState = {
 
 }
 
-export default ( state = initialState , action: ActionType ) => {
+const Store = ( state = initialState , action: ActionType ) => {
     
     switch(action.type){
         case ActionsType.saveCitie:
@@ -18,3 +18,5 @@ export default ( state = initialState , action: ActionType ) => {
             return state
     }
 }
+
+export default Store
