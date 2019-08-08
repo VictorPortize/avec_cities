@@ -6,7 +6,7 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome5'
 
 import CityButton from '../../Components/CityButton'
-
+import { connect } from 'react-redux'
 
 class MainPage extends Component{
 
@@ -20,11 +20,14 @@ class MainPage extends Component{
     }
 
     render(){
+        console.log(this.props)
       return (
             <SafeAreaView>
                 <View>
-                    <CityButton onPress={this.loadCity} text={'Austin'} />
-                    <CityButton onPress={this.loadCity} text={'jackson ms'} />
+                    {/* {this.props.countrys.map((value,index) => {
+                        console.log(value)
+                        return <CityButton text='asd' onPress={() => {}} />
+                    })} */}
                 </View>
             </SafeAreaView>
         );
@@ -35,4 +38,6 @@ class MainPage extends Component{
     }
 };
 
-export default MainPage
+const mapStateToProps = (state: any) => state
+
+export default connect( mapStateToProps, null)(MainPage)

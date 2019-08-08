@@ -1,13 +1,13 @@
-const SAVE_CITIE = 'SAVE_CITIE'
-const saveCitie = ( payload: Object ) => ({
-    type: SAVE_CITIE,
+const SAVE_COUNTRY = 'SAVE_COUNTRY'
+const saveCountry = ( payload: Object ) => ({
+    type: SAVE_COUNTRY,
     payload
 })
 
 export const ActionsType = {
-    saveCitie : SAVE_CITIE
+    saveCountry : SAVE_COUNTRY
 } 
 
 export const Actions = {
-    saveCitie
+    saveCountry
 }
