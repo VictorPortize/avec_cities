@@ -23,30 +23,30 @@ interface Country{
 }
 
 const initialState = {
-
+    countrys:[]
 }
 
 const Store = ( state = initialState , action: ActionType ) => {
     switch(action.type){
         case ActionsType.saveCountry:
-            let country = action.payload.name.toUpperCase() || ''
-            let data = {}
-            if(state[country] == undefined){
-                data[country] = {
-                    citys:[
-                        action.payload.city
-                    ]
-                }
-            }
-            else{
-                data[country] = {
-                    citys:[
-                        ...state[country].citys,action.payload.city
-                    ]
-                }
-            }
-            console.log(state)
-            return Object.assign(state,data)
+            // let country = action.payload.name.toUpperCase() || ''
+            // let data = {}
+            // if(state.countrys[country] == undefined){
+            //     data[country] = {
+            //         citys:[
+            //             action.payload.city.toUpperCase()
+            //         ]
+            //     }
+            // }
+            // else{
+            //     data[country] = {
+            //         citys:[
+            //             ...state.countrys[country].citys,action.payload.city.toUpperCase()
+            //         ]
+            //     }
+            // }
+            console.log(state)  
+            return Object.assign(state,{countrys:[...state.countrys, action.payload ]})
         default:
             return state
     }

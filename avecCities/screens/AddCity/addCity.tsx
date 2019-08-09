@@ -6,6 +6,7 @@ import {
   Dimensions,
   TextInput,
   Text,
+  NativeEventEmitter
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/Ionicons'
@@ -15,6 +16,7 @@ import { connect } from 'react-redux'
 import { Actions } from '../../redux/Actions/index'
 const {height, width} = Dimensions.get('window')
 
+const Event = new NativeEventEmitter()
 
 class AddCity extends Component{
 
@@ -52,6 +54,8 @@ class AddCity extends Component{
 
     onPress = () => {
         this.props.saveCountry({name: this.state.cityName, city: this.state.cityName})
+        this.eraseText()
+        Event.emit('change')
         this.props.navigation.navigate('MainPage')
     }
 
